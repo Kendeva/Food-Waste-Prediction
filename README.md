@@ -17,7 +17,6 @@ The system predicts whether food stock is classified as **Safe** or **Potentiall
 - Predict new stock conditions
 - Classify stock as **Safe** or **Potentially Wasted**
 
----
 
 ## Pipeline
 
@@ -25,7 +24,6 @@ The system predicts whether food stock is classified as **Safe** or **Potentiall
 Dataset → Preprocessing → Train/Test Split → Decision Tree Training → Evaluation → Visualization → Prediction
 ```
 
----
 
 ## ML Model
 
@@ -42,7 +40,6 @@ Model configuration:
 
 The Decision Tree Classifier was selected because it is simple, easy to understand, suitable for small datasets, and provides a clear visualization of the decision-making process.
 
----
 
 ## Dataset
 
@@ -63,7 +60,6 @@ Prediction classes:
 - `0` → Safe
 - `1` → Potentially Wasted
 
----
 
 ## Results
 
@@ -79,7 +75,6 @@ Based on the Decision Tree visualization, the most dominant variables in determi
 
 The model is also able to classify new input data that is not included in the training dataset.
 
----
 
 ## Project Structure
 
@@ -94,7 +89,6 @@ food-waste-prediction/
 └── requirements.txt
 ```
 
----
 
 ## How to Run
 
@@ -114,7 +108,6 @@ The program will display:
 - Decision Tree visualization
 - Prediction result for new input data
 
----
 
 ## SDG Contribution
 
@@ -122,7 +115,6 @@ This project supports **Sustainable Development Goal 12: Responsible Consumption
 
 By predicting potential food waste, the system can support more efficient stock management, reduce food waste, save resources, and encourage more sustainable consumption.
 
----
 
 ## Limitations
 
@@ -131,7 +123,6 @@ By predicting potential food waste, the system can support more efficient stock 
 - The model has not yet been tested using real supermarket data.
 - The current project only uses a Decision Tree Classifier.
 
----
 
 ## Future Development
 
