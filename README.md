@@ -4,7 +4,7 @@ An Artificial Intelligence project designed to help reduce potential food waste 
 
 The system predicts whether food stock is classified as **Safe** or **Potentially Wasted** based on stock quantity, sales, weather conditions, holidays, and remaining stock.
 
----
+
 
 ## Features
 
