@@ -1,117 +1,24 @@
 # AI-Based Food Waste Prediction
 
-A simple Artificial Intelligence project that uses a **Decision Tree Classifier** to predict potential food waste in supermarkets.
+A simple Artificial Intelligence project developed to predict potential food waste in supermarkets using a Decision Tree Classifier.
 
-The model analyzes supermarket sales data and supporting factors such as stock quantity, items sold, weather conditions, holidays, and remaining stock percentage to classify stock as **Safe** or **Potential Waste**.
+The model analyzes supermarket stock and sales conditions to determine whether the remaining stock is classified as **Safe** or **Potentially Wasted**.
 
 ## Project Overview
 
-Food waste can occur when supermarket stock does not match actual customer demand. This project applies a basic machine learning approach to identify stock conditions that may lead to food waste and support better inventory decisions.
+Food waste is one of the common problems faced by supermarkets, especially when the amount of available stock does not match customer demand.
+
+This project applies a machine learning approach to analyze supermarket sales data and predict the potential risk of food waste based on several factors such as stock quantity, items sold, weather conditions, holidays, and remaining stock percentage.
 
 ## Features
 
-- Loads supermarket sales data from a CSV file
-- Splits the dataset into training and testing data
-- Trains a Decision Tree classification model
-- Evaluates model accuracy
-- Visualizes the trained Decision Tree
-- Predicts the status of new stock data
-
-## Dataset Features
-
-The model uses the following input features:
-
-| Feature | Description |
-| --- | --- |
-| `stok` | Total stock available |
-| `terjual` | Number of products sold |
-| `hari_ke` | Day index |
-| `cuaca` | Weather condition represented numerically |
-| `hari_besar` | Holiday or special-day indicator |
-| `sisa_persen` | Remaining stock percentage |
-| `label` | Classification target |
-
-Target labels:
-
-- `0` = Safe
-- `1` = Potential Waste
-
-## Machine Learning Model
-
-The project uses a **Decision Tree Classifier** with the following configuration:
-
-```python
-DecisionTreeClassifier(
-    criterion="entropy",
-    max_depth=4,
-    random_state=42
-)
-```
-
-The dataset is divided into:
-
-- **80% training data**
-- **20% testing data**
-
-## Project Structure
-
-```text
-food-waste-prediction/
-├── data/
-│   └── README.md
-├── docs/
-│   └── AI-Food-Waste-Report.pdf
-├── images/
-│   └── .gitkeep
-├── src/
-│   └── main.py
-├── .gitignore
-├── README.md
-└── requirements.txt
-```
-
-> The original `data_penjualan.csv` dataset is not included because it was not available in the uploaded project files. Add it to the `data/` directory before running the program.
-
-## Requirements
-
-- Python 3.9 or newer
-- Pandas
-- Scikit-learn
-- Matplotlib
-
-Install the required libraries with:
-
-```bash
-pip install -r requirements.txt
-```
-
-## How to Run
-
-1. Place the dataset in:
-
-```text
-data/data_penjualan.csv
-```
-
-2. Run the program from the project root:
-
-```bash
-python src/main.py
-```
-
-3. The program will display:
-
-- The first five rows of the dataset
-- Dataset information
-- Model accuracy
-- Decision Tree visualization
-- Prediction result for a sample input
-
-The generated Decision Tree image will also be saved as:
-
-```text
-images/decision_tree.png
-```
+- Load supermarket sales data from a CSV dataset
+- Process features and prediction labels
+- Split data into training and testing sets
+- Train a Decision Tree Classifier
+- Evaluate model accuracy
+- Visualize the Decision Tree
+- Predict new stock conditions
 
 ## Technologies Used
 
@@ -120,20 +27,106 @@ images/decision_tree.png
 - Scikit-learn
 - Matplotlib
 
-## Project Purpose
+## Machine Learning Model
 
-This project demonstrates a simple application of Artificial Intelligence for supermarket inventory management and food waste reduction. It also supports the idea of **Responsible Consumption and Production (SDG 12)** by encouraging more efficient stock management.
+The project uses a **Decision Tree Classifier** with the following configuration:
 
-## Future Improvements
+- Criterion: Entropy
+- Maximum Depth: 4
+- Training Data: 80%
+- Testing Data: 20%
 
-Possible improvements include:
+## Dataset
+
+The dataset contains simulated supermarket sales data with the following features:
+
+| Feature | Description |
+| --- | --- |
+| `stok` | Total available stock |
+| `terjual` | Number of items sold |
+| `hari_ke` | Day index |
+| `cuaca` | Weather condition |
+| `hari_besar` | Holiday or special day indicator |
+| `sisa_persen` | Remaining stock percentage |
+| `label` | Prediction target |
+
+The prediction is divided into two categories:
+
+- **Safe**
+- **Potentially Wasted**
+
+## Project Structure
+
+```text
+food-waste-prediction/
+├── data/
+│   └── data_penjualan.csv
+├── src/
+│   └── main.py
+├── .gitignore
+├── README.md
+└── requirements.txt
+```
+
+## Installation
+
+Clone this repository:
+
+```bash
+git clone https://github.com/Kendeva/food-waste-prediction.git
+```
+
+Move into the project directory:
+
+```bash
+cd food-waste-prediction
+```
+
+Install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+## How to Run
+
+Run the program from the project directory:
+
+```bash
+python src/main.py
+```
+
+The program will display:
+
+- Dataset preview
+- Dataset information
+- Model accuracy
+- Decision Tree visualization
+- Prediction result for new input data
+
+## Prediction Example
+
+The model can classify new supermarket stock conditions into:
+
+```text
+Safe
+```
+
+or:
+
+```text
+Potentially Wasted
+```
+
+## Future Development
+
+This project can be further improved by:
 
 - Using real supermarket sales data
 - Adding more relevant features
-- Comparing multiple machine learning algorithms
-- Improving model evaluation with additional metrics
-- Building a web-based interface for easier prediction input
+- Comparing different machine learning algorithms
+- Developing a web-based prediction interface
 
-## Documentation
+## SDG Contribution
 
-The full academic report is available in the `docs/` folder.
+This project supports **Sustainable Development Goal 12: Responsible Consumption and Production** by exploring how Artificial Intelligence can help improve stock management and reduce potential food waste.
